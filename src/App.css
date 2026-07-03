@@ -2,6 +2,12 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -16,7 +22,6 @@ html {
   display: flex;
   justify-content: flex-end;
   gap: 25px;
-  margin: 0;
   padding: 0;
 }
 
@@ -26,6 +31,7 @@ html {
   font-weight: 500;
 }
 
+/* INICIO */
 .hero-grid {
   display: flex;
 }
@@ -79,4 +85,176 @@ html {
 .equipo-item img {
   width: 250px;
   border-radius: 6px;
+}
+
+.razones {
+  background: #f7941d;
+  color: #b03a00;
+  padding: 30px 60px;
+  text-align: center;
+}
+
+.razones h2 {
+  margin-bottom: 30px;
+}
+
+.razones-grid {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  text-align: left;
+}
+
+.razon-item {
+  max-width: 400px;
+  text-align: center;
+}
+
+.razon-item img {
+  width: 250px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* PAGE HEADER */
+.page-header {
+  background: #2196f3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.page-header.naranja {
+  background: #f7941d;
+}
+
+/* SOBRE NOSOTROS */
+.resena {
+  display: flex;
+  gap: 30px;
+  padding: 30px 60px;
+  background: #2196f3;
+  color: white;
+}
+
+.resena-text {
+  flex: 2;
+}
+
+.resena-text p {
+  margin: 10px 0;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+.resena-img {
+  flex: 1;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.vision-mision {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 60px;
+  background: #f7941d;
+  color: #333;
+}
+
+.vision-mision.reverse {
+  flex-direction: row-reverse;
+}
+
+.vm-img {
+  width: 150px;
+}
+
+.valores {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 60px;
+  background: #f7941d;
+}
+
+.valores-img {
+  width: 300px;
+  border-radius: 6px;
+}
+
+/* SERVICIOS */
+.odeco {
+  background: #29abe2;
+  color: white;
+  padding: 30px 60px;
+  text-align: center;
+}
+
+.odeco ul {
+  text-align: left;
+  max-width: 500px;
+  margin: 10px auto 20px;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #f7941d;
+  padding: 30px 60px;
+  gap: 20px;
+}
+
+.servicio-item {
+  text-align: center;
+  color: white;
+}
+
+.servicio-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* CONTACTOS */
+.contacto-bar {
+  background: #29abe2;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 40px 60px;
+}
+
+.contacto-item {
+  display: flex;
+  gap: 15px;
+}
+
+.icono {
+  font-size: 1.8rem;
+}
+
+/* FOOTER */
+.footer {
+  background: #262626;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  font-size: 0.85rem;
+}
+
+.footer-link a {
+  color: #ff6666;
+  text-decoration: underline;
+}
+
+.social span {
+  font-weight: bold;
 }

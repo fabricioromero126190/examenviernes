@@ -4,6 +4,8 @@ import hero3 from '../assets/hero3.jpg'
 import mascota from '../assets/mascota.png'
 import gerente from '../assets/gerente.jpg'
 import sindicato from '../assets/sindicato.jpg'
+import trabajo1 from '../assets/trabajo1.jpg'
+import trabajo2 from '../assets/trabajo2.jpg'
 
 function Inicio() {
   return (
@@ -51,8 +53,34 @@ function Inicio() {
           </div>
         </div>
       </div>
+
+      <div className="razones">
+        <h2>¡RAZONES PRINCIPALES PARA ELEGIRNOS!</h2>
+
+        <div className="razones-grid">
+          <div className="razon-item">
+            <img src={trabajo1} alt="Calidad" />
+            <h3>CALIDAD</h3>
+            <p>
+              Con la transparencia en inspecciones necesarias para el buen
+              uso del agua potable.
+            </p>
+          </div>
+
+          <div className="razon-item">
+            <h3>TRABAJO PROFESIONAL</h3>
+            <p>
+              Su objetivo es apoyar el fortalecimiento e incremento de la cobertura
+              de los servicios de agua potable, alcantarillado y saneamiento que
+              prestan los organismos operativos, de los municipios, a través de las
+              entidades.
+            </p>
+            <img src={trabajo2} alt="Trabajo profesional" />
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
 
-export default Inicio
+export default Inicio;
