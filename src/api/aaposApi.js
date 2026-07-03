@@ -1,0 +1,88 @@
+// src/api/aaposApi.js
+//
+// Capa de acceso a datos para la sección "Sobre nosotros".
+// Aquí se centralizan todas las llamadas HTTP. Mientras el backend real
+// no esté disponible, cada función devuelve datos simulados (mock) con la
+// misma forma que se espera reciba desde la API, para que el resto de la
+// app no tenga que cambiar cuando se conecte el backend de verdad.
+
+const BASE_URL = import.meta.env?.VITE_API_URL || "https://api.aapospotosi.com";
+
+// Helper genérico de fetch con manejo de errores centralizado.
+async function apiFetch(endpoint, options = {}) {
+  try {
+    const res = await fetch(`${BASE_URL}${endpoint}`, {
+      headers: { "Content-Type": "application/json" },
+      ...options,
+    });
+    if (!res.ok) {
+      throw new Error(`Error ${res.status} al consultar ${endpoint}`);
+    }
+    return await res.json();
+  } catch (error) {
+    console.error(`[aaposApi] Fallo en ${endpoint}:`, error.message);
+    throw error;
+  }
+}
+
+// GET /institucion/resena-historica
+export async function getResenaHistorica() {
+  try {
+    return await apiFetch("/institucion/resena-historica");
+  } catch {
+    // Fallback mock (contenido real extraído del sitio actual de AAPOS)
+    return {
+      titulo: "AAPOS",
+      subtitulo: "Administración Autónoma para Obras Sanitarias",
+      parrafos: [
+        `La Administración Autónoma Para Obras Sanitarias (AAPOS) fue creada mediante DS 10221 de 21 de abril de 1972, sobre la base de DAP (Ex Departamento de Aguas Potables) con carácter de empresa descentralizada de la Honorable Gobierno Municipal sin alterar la naturaleza jurídica de la entidad mencionada, por ende con autonomía de Gestión Administrativa y Financiera, con duración indefinida con Patrimonio Independiente de acuerdo a disposiciones legales enmarcadas en el DS 10221 y DL (Decreto Ley 17835 de fecha diciembre de 1980) y sus normas complementarias que rigen en el estatuto orgánico, aprobado por resolución Ministerial N° 115 de 30 de mayo de 1973.`,
+        `Entidad sujeta a fiscalización por parte de la CGE, en virtud del art. 18 del DS 10221, "La Contraloría General de la República, a través de su oficina departamental, fiscalizará permanentemente el desenvolvimiento económico, administrativo y financiero de AAPOS - Potosí".`,
+        `Por otra parte, en fecha 21 de febrero de 1997, mediante DS N° 24505 el Poder Ejecutivo reglamenta la Ley del Sistema de Regulación Sectorial SIRESE (Superintendencia de Servicios Básicos SISAB), AAPOS Autoridad de Fiscalización de Agua Potable y Alcantarillado Sanitaria, dentro del ámbito de competencias, los procedimientos de audiencia pública de infracciones y sanciones, así como los recursos administrativos.`,
+        `En fecha 22 de julio de 1997 mediante DS 24716 se aprobó el Reglamento de Organización Institucional y de las Concesiones del sector de Aguas y el Reglamento de Uso de Bienes de dominio público de aguas. Además se determina entre otras que la Superintendencia de Aguas, actualmente AAPS es el Organismo con jurisdicción nacional que cumple la función de Regulación, que consiste en cumplir y hacer cumplir la Ley del Sistema de regulación. La Ley de Agua asegurando la correcta aplicación de los Principios, Objetivos y Políticas que forman parte de las normas.`,
+        `En fecha 21 de abril de 1998, AAPOS mediante memorial solicita la Regulación de Concesión, a la Superintendencia de Aguas, instancia por el cual emitió la Resolución N° 40/98 en fecha 2 de octubre de 1998 autorizando a la EPSA AAPOS (Empresa Prestadora de Servicios de Agua Potable y Alcantarillado, de la Administración Autónoma Para Obras Sanitarias), la cual se consolida el 13 de noviembre de 2000 con la suscripción y formalización del contrato de concesión por 30 años.`,
+      ],
+    };
+  }
+}
+
+// GET /institucion/galeria?seccion=historia
+export async function getGaleriaHistoria() {
+  try {
+    return await apiFetch("/institucion/galeria?seccion=historia");
+  } catch {
+    return [
+      { id: 1, url: "/assets/img/historia-1.jpg", alt: "Entrega de conexión de agua potable a una familia" },
+      { id: 2, url: "/assets/img/historia-2.jpg", alt: "Inspección técnica de conexión domiciliaria" },
+      { id: 3, url: "/assets/img/historia-3.jpg", alt: "Cuadrilla en labores de mantenimiento de red" },
+    ];
+  }
+}
+
+// GET /institucion/vision-mision-valores
+export async function getVisionMisionValores() {
+  try {
+    return await apiFetch("/institucion/vision-mision-valores");
+  } catch {
+    return {
+      vision:
+        "Ser una empresa metropolitana y líder a nivel nacional en la prestación del servicio de agua potable y saneamiento, que contribuye a mejorar la calidad de vida de los habitantes de nuestra ciudad de Potosí.",
+      mision:
+        "Proporcionar servicios de agua potable y saneamiento en beneficio de los habitantes de la ciudad de Potosí, a través de una gestión eficiente, transparente y sostenible, con enfoque social.",
+      valores:
+        'Administración Autónoma para Obras Sanitarias se guía y se identifica con sus clientes internos y externos por los siguientes valores empresariales: "probidad y vocación de servicio, lealtad y obediencia, trabajo en equipo, puntualidad, respeto y disciplina, veracidad y transparencia, idoneidad".',
+    };
+  }
+}
+
+// GET /institucion/contacto
+export async function getContacto() {
+  try {
+    return await apiFetch("/institucion/contacto");
+  } catch {
+    return {
+      horario: "Lunes a viernes de 8:00 a 12:00 y de 14:00 a 18:00",
+      email: "aapos@aapos.com.bo",
+      facebook: "AAPOSOFICIAL",
+    };
+  }
+}
