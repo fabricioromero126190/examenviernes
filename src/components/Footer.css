@@ -1,0 +1,152 @@
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    background:#2f2f2f;
+
+    color:white;
+
+    margin-top:0;
+    
+
+}
+
+/* Contenedor */
+
+.footer-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:45px;
+
+}
+
+
+.footer-info h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    color:white;
+
+    font-family:Georgia, serif;
+
+}
+
+.footer-info p{
+
+    font-size:20px;
+
+    margin:8px 0;
+
+}
+
+.correo-footer{
+
+    color:#ffffff;
+
+    font-weight:bold;
+
+}
+
+.footer-redes{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.facebook{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#1877f2;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:35px;
+
+    transition:.3s;
+
+}
+
+.facebook:hover{
+
+    transform:scale(1.1);
+
+}
+
+.footer-redes p{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+
+.footer-copy{
+
+    background:#202020;
+
+    color:#f58220;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-size:18px;
+
+}
+
+@media(max-width:900px){
+
+.footer-container{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:40px;
+
+}
+
+.footer-info h2{
+
+font-size:30px;
+
+}
+
+.footer-info p{
+
+font-size:18px;
+}
+}

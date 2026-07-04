@@ -1,0 +1,162 @@
+.banner{
+    background:#f58220;
+    padding:20px;
+    text-align:center;
+}
+
+.banner h1{
+    color:white;
+    font-size:55px;
+    font-family:Georgia, serif;
+    letter-spacing:2px;
+}
+
+.contact-container{
+
+    background:#4eb9cc;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    padding:70px 80px;
+
+    min-height:550px;
+
+}
+.contact-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+.icon{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:60px;
+
+    margin-bottom:25px;
+
+    color:black;
+
+}
+
+
+.contact-box h2{
+
+    color:white;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.contact-box h3{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+}
+
+
+.contact-box p{
+
+    font-size:28px;
+
+    color:#111;
+
+    margin:6px 0;
+
+}
+
+
+.correo{
+
+    color:red;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+.correo:hover{
+
+    text-decoration:underline;
+
+}
+
+@media(max-width:0px){
+
+.contact-container{
+
+grid-template-columns:1fr;
+
+padding:40px 20px;
+
+gap:50px;
+
+}
+
+.banner h1{
+
+font-size:40px;
+
+}
+
+.contact-box h2{
+
+font-size:28px;
+
+}
+
+.contact-box h3{
+
+font-size:24px;
+
+}
+
+.contact-box p{
+
+font-size:22px;
+
+}
+
+.icon{
+
+width:100px;
+height:100px;
+font-size:50px;
+
+}
+
+}

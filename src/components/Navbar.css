@@ -1,0 +1,38 @@
+.navbar {
+  background: white;
+  border-bottom: 4px solid orange;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin: 0;
+}
+
+.navbar-menu a {
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.navbar-menu a:hover {
+  background: #bfbfbf;
+  color: white;
+}
+
+/* Página activa */
+.navbar-menu a.activo {
+  background: #bfbfbf;
+  color:black;
+}                                 
