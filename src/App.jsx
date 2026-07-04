@@ -1,3 +1,14 @@
+import InicioInforma from "./components/InicioInforma";
+import Razones from "./components/Razones";
+import Footer from "./components/Footer";
+
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <InicioInforma />
+      <Razones />
 import NavBar from './components/NavBar.jsx'
 import Inicio from './pages/Inicio.jsx'
 import SobreNosotros from './pages/SobreNosotros.jsx'
@@ -16,7 +27,7 @@ function App() {
       <Contactos />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
